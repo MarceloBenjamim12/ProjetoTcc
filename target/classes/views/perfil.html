@@ -1,0 +1,72 @@
+<meta charset="utf-8" />
+<div>
+	<div ng-include="'views/menu.html'"></div>
+	<!-- Bem Vindo
+	{{usuario}} -->
+</div>
+
+<div class="col-md-2"></div>
+
+<div class="background-home">
+
+	<div class="col-md-8 ">
+		
+			<div class="userHome"></div>
+			<div class="boxImg">
+				<img class="userPNG" ng-src="img/{{perfil.userID.id}}.jpg" width="200px"
+					height="200px">
+				<div class="col-sm-2 serviceDescricao">
+					<div ng-show="service == 1">Personal: </div>				
+					<div ng-show="service == 2">Nutricionista </div>
+					<div class="ranking">Ranking: {{perfil.classif}}</div>
+					<button class="btMsg">Mensagem</button>
+				</div>
+				
+			</div>
+			
+			<div class="userHomeInfo"></div>
+			<div class="box-info">
+
+				<div class="">
+					<div class="boxInfoUser">
+						<span class="col-md-12 homeinfo"><b>Nome:</b> {{perfil.userID.nome}}
+						</span>
+					</div>
+					<div class="boxInfoUser">
+						<span class="col-md-6 homeinfo"><b>Altura:</b>{{perfil.userID.altura}}M</span><span
+							class="col-md-6 homeinfo"><b>Peso:</b>{{perfil.userID.peso}}Kg</span>
+					</div>
+					<div class="boxInfoUser">
+						<span class="col-md-8 homeinfo"><b>Email:</b>
+							{{perfil.userID.email}}</span><span class="col-md-4 homeinfo"><b>Data
+								de cadastro:</b>{{ perfil.userID.dtCadastro| date:'dd/MM/yyyy'}}</span>
+					</div>
+					
+				</div>
+				<div class="userHomeInfo"></div>
+				
+				<div ng-hide="service == 1 || service == 2">
+					<div class="">Objetivo:</div>
+					<div class="quebraLinha">{{perfil.userID.objetivo}}</div>
+					<textarea class="objetivoInput" maxlength="500"
+						ng-show="datasource == 'editing'" type="text" ng-model="objetivo"></textarea>
+					<div class="userHomeInfo"></div>
+				</div>					
+					
+				<div class="quebraLinha"><b>Especialidade:</b> {{perfil.espec}}</div>
+				
+				<br>
+				
+				<div class="quebraLinha"><b>Observação do profissional: </b>{{perfil.obs}}</div>
+				
+				<div class="userHomeInfo"></div>
+			
+		</div>
+		
+
+	</div>
+
+</div>
+
+<div class="col-md-2"></div>
+<div ng-include="'views/Rodape.html'"></div>

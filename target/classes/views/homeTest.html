@@ -1,0 +1,65 @@
+<div>
+	<div ng-include="'views/menu.html'"></div>
+	<!-- Bem Vindo
+	{{usuario}} -->
+</div>
+
+<div class="imgBackground">
+
+	<div class="col-md-2"></div>
+
+	<div class="background-home">
+
+		<div class="col-md-8 ">
+		
+
+			<img class="userPNG" ng-src="img/{{user.id}}.jpg" width="200px"
+				height="200px">
+
+			<div class="userHomeInfo"></div>
+			<div class="box-info">
+
+				<div class="">
+					<div class="boxInfoUser">
+						<span class="col-md-12 homeinfo"><b>Nome:</b> {{user.nome}}
+						</span>
+					</div>
+					<div class="boxInfoUser">
+						<span class="col-md-6 homeinfo"><b>Altura:</b>{{user.altura}}M</span><span
+							class="col-md-6 homeinfo"><b>Peso:</b>{{user.peso}}Kg</span>
+					</div>
+					<div class="boxInfoUser">
+						<span class="col-md-8 homeinfo"><b>Email:</b>
+							{{user.email}}</span><span class="col-md-4 homeinfo"><b>Data
+								de cadastro:</b>{{ user.dtCadastro| date:'dd/MM/yyyy'}}</span>
+					</div>
+					<div class="boxInfoUser">
+						<span class="col-md-6 homeinfo"><b>Personal:</b><a></a></span><span
+							class="col-md-6 homeinfo"><b>Nutricionista:</b><a></a></span>
+					</div>
+				</div>
+				<div class="userHomeInfo"></div>
+				<div class="">Objetivo:</div>
+				<div ng-show="datasource != 'editing'">{{user.objetivo}}</div>
+				<textarea class="objetivoInput" maxlength="500"
+					ng-show="datasource == 'editing'" type="text" ng-model="objetivo"></textarea>
+				<div class="btnBox">
+					<button class="btLogar" ng-show="datasource != 'editing'"
+						ng-click="AlteraObjetivo()">Editar</button>
+					<button class="btLogar" ng-show="datasource == 'editing'"
+						ng-click="salvar()">Salvar</button>
+					<button class="btLogar" ng-show="datasource == 'editing'"
+						ng-click="cancel()">Cancelar</button>
+				</div>
+				<div class="userHomeInfo"></div>
+
+			</div>
+
+
+		</div>
+
+	</div>
+
+	<div class="col-md-2"></div>
+</div>
+<div ng-include="'views/Rodape.html'"></div>

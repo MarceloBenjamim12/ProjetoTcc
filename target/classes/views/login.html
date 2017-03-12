@@ -1,0 +1,31 @@
+
+<div class="login">
+	<div class="logoHome">
+		<img src="img/azulEBrancoEdit.png" width="10%" height="175px">
+		<div class="logoText">
+			<h1 class="socialLogo">SOCIAL</h1>
+			<h3 class="socialLogo">Fitness</h3>
+		</div>
+	</div>
+	<div>
+		<div class="box">
+			<form ng-submit="login()">
+				<div class="inputLogin">
+					<label class="labelLogin">Login: </label> <input class="input"
+						type="text" name="username" ng-model="username" id="username">
+				</div>
+				<div class="inputSenha">
+					<label class="labelLogin">Senha: </label> <input class="input"
+						type="password" name="password" ng-model="password" id="password">
+				</div>
+				<div class="ErroLogin">
+                    {{error}}
+                </div>
+				<div>
+					<button class="btLogar" type="submit">Entrar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</div>
