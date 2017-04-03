@@ -1,10 +1,6 @@
-var app = angular.module("ControllerApp", ['ngRoute', 'ngCookies']);
+var app = angular.module("ControllerApp", ['ngRoute', 'ngCookies', 'controllerService']);
 
-app.controller("menuController", function($scope, $http, $location, $rootScope, $window, $cookies){
-	$rootScope.activetab = "login";
-})
-
-app.controller("primeController", function($scope, $http, $location, $rootScope, $window, $cookies){
+app.controller("primeController", ['$scope', '$http', '$location', '$rootScope', '$window', '$cookies', function($scope, $http, $location, $rootScope, $window, $cookies){
 	
 	$rootScope.activetab = "login";
 	
@@ -65,6 +61,10 @@ app.controller("primeController", function($scope, $http, $location, $rootScope,
 		
 		
 	}
+}]);
+
+app.controller("menuController", function($scope, $http, $location, $rootScope, $window, $cookies){
+	$rootScope.activetab = "login";
 });
 
 app.controller("homeController", function($scope, $http, $location, $rootScope, $cookies, $window){
@@ -153,6 +153,46 @@ app.controller("perfilController", function($scope, $location){
 	
 	console.log($scope.perfil);
 });
+
+app.controller("chatController", ['useRest', '$location', function(useRest, $location){
+	var self = this;
+	this.mensagens;
+	this.perfil =  JSON.parse($location.search().usuario);
+	this.user = JSON.parse(sessionStorage._u);
+	var url = 'rest/Msg/listaByReceiverSend/'+this.user.id+'/'+this.perfil.id;
+	
+	useRest.GetMethod(url, callback);
+	
+	function callback(response, type){
+		if(type){
+			self.mensagens = response;
+			console.log(response);
+		}else{
+			alert("erro ao buscar mensagens")
+		}
+	}
+	
+	this.enviar = function(){
+		var urlPOST = 'rest/Msg';
+		var date = new Date();
+		var data = new Date(self.user.dtCadastro);
+		self.user.dtCadastro = data.getFullYear()+"-"+data.getMonth()+1+"-"+data.getDate();
+		data = new Date(self.user.ultimoAcesso);
+		console.log(self.user.dtCadastro);
+		self.user.ultimoAcesso = null;
+		var entity = {msg: self.msg, msgEnv: self.user, msgReceb: self.perfil, dtEnvio: date}
+		
+		useRest.PostMethod(urlPOST, entity, newCallback);
+	}
+	
+	function newCallback(response, type){
+		if(type){
+			console.log("Salvou");
+		}else{
+			console.log("Erro");
+		}
+	}
+}])
 
 app.controller("pesquisaController", function($scope, $http){
 	$scope.personaList = {};

@@ -1,4 +1,4 @@
-var app = angular.module("myApp", ['ngRoute', 'ngCookies', 'ControllerApp']);
+var app = angular.module("myApp", ['ngRoute', 'ngCookies', 'ControllerApp', 'controllerService']);
 
 app.config(function($routeProvider, $locationProvider) {	
 	
@@ -22,6 +22,9 @@ app.config(function($routeProvider, $locationProvider) {
     .when('/perfil', {
 	    templateUrl: "views/perfil.html",
 	    controller : "perfilController"
+    })
+    .when('/chat', {
+	    templateUrl: "views/chat.html"
     }) 
     .otherwise({
     	redirectTo : '/'

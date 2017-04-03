@@ -63,7 +63,7 @@ public class usuarioREST implements RESTService<Usuario>{
 		
 		this.session.begin();
 		
-		Usuario usu = business.buscaPorId(id);
+		Usuario usu = business.BuscarPorId(id);
 		
 		usu.setObjetivo(obj);
 		

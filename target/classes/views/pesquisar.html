@@ -1,5 +1,5 @@
 <div>	
-	<div ng-include="'views/menu.html'"></div>
+	
 	<!-- Bem Vindo
 	{{usuario}} -->
 </div>
@@ -7,21 +7,27 @@
 <div class="col-md-2">
 </div>
 
-<div class="col-md-8">
-	<input class="inputSearch" type="text" maxlength="30" ng-model="pesquisa">
-	<select class="select" ng-model="select"><option selected="selected" value="1">Personal</option><option value="2">Nutricionista</option></select>
-	<button class="btLogar" ng-click="pesquisar()">Pesquisar</button>
-	<div class="resultBox" ng-show="(personaList|filter:pesquisa).length > 0">
-		<div class="" ng-repeat="personal in personaList | filter:pesquisa">
-			<div class="optionResult">
-				<img class="imgResult" ng-src="img/{{personal.userID.id}}.jpg" width="50px" height="50px">
-				<div class="col-sm-9"><a ng-href="#/perfil?usuario={{personal}}&service={{select}}">{{personal.userID.nome}}</a></div>
-				<div class="col-sm-2 rank">Media - {{personal.classif}}</div>
-				<div class="linePesq"></div>
-				<div class="col-sm-9">{{personal.espec}}
+<div class="col-md-8 white-color">
+	<div ng-include="'views/menu.html'"></div>
+	<div class="box-pesq">
+		<input class="inputSearch" type="text" maxlength="30" ng-model="pesquisa">
+		<select class="select" ng-model="select"><option selected="selected" value="1">Personal</option><option value="2">Nutricionista</option></select>
+		<button class="btLogar" ng-click="pesquisar()">Pesquisar</button>
+		<div class="">
+			<div class="resultBox" ng-show="(personaList|filter:pesquisa).length > 0">
+				<div class="" ng-repeat="personal in personaList | filter:pesquisa">
+					<div class="optionResult">
+						<img class="imgResult" ng-src="img/{{personal.userID.id}}.jpg" width="50px" height="50px">
+						<div class="col-sm-9"><a ng-href="#/perfil?usuario={{personal}}&service={{select}}">{{personal.userID.nome}}</a></div>
+						<div class="col-sm-2 rank">Media - {{personal.classif}}</div>
+						<div class="linePesq"></div>
+						<div class="col-sm-9">{{personal.espec}}</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
+	<div ng-include="'views/Rodape.html'"></div>
 </div>
 
 <div class="col-md-2">

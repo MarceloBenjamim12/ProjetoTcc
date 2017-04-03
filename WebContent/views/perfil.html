@@ -1,17 +1,16 @@
 <meta charset="utf-8" />
 <div>
-	<div ng-include="'views/menu.html'"></div>
+	
 	<!-- Bem Vindo
 	{{usuario}} -->
 </div>
 
 <div class="col-md-2"></div>
 
-<div class="background-home">
+<div class="background-home ">
 
-	<div class="col-md-8 ">
-		
-			<div class="userHome"></div>
+	<div class="col-md-8 white-color">
+		<div ng-include="'views/menu.html'"></div>
 			<div class="boxImg">
 				<img class="userPNG" ng-src="img/{{perfil.userID.id}}.jpg" width="200px"
 					height="200px">
@@ -19,7 +18,7 @@
 					<div ng-show="service == 1">Personal: </div>				
 					<div ng-show="service == 2">Nutricionista </div>
 					<div class="ranking">Ranking: {{perfil.classif}}</div>
-					<button class="btMsg">Mensagem</button>
+					<button class="btMsg"><a ng-href="#/chat?usuario={{perfil.userID}}">Mensagem</a></button>
 				</div>
 				
 			</div>
@@ -52,21 +51,20 @@
 						ng-show="datasource == 'editing'" type="text" ng-model="objetivo"></textarea>
 					<div class="userHomeInfo"></div>
 				</div>					
+				<div class="box-coment">	
+					<div class="quebraLinha"><b>Especialidade:</b> {{perfil.espec}}</div>
 					
-				<div class="quebraLinha"><b>Especialidade:</b> {{perfil.espec}}</div>
-				
-				<br>
-				
-				<div class="quebraLinha"><b>Observação do profissional: </b>{{perfil.obs}}</div>
-				
-				<div class="userHomeInfo"></div>
-			
+					<br>
+					
+					<div class="quebraLinha"><b>Observação do profissional: </b>{{perfil.obs}}</div>
+					
+				</div>			
 		</div>
 		
-
+		<div ng-include="'views/Rodape.html'"></div>
 	</div>
 
 </div>
 
 <div class="col-md-2"></div>
-<div ng-include="'views/Rodape.html'"></div>
+

@@ -1,0 +1,54 @@
+<div>
+	<div ng-include="'views/menu.html'"></div>
+	<!-- Bem Vindo
+	{{usuario}} -->
+</div>
+
+<div ng-controller="chatController as chat">
+	
+	
+	<div class="background-home">
+		<div class="col-md-12">
+			
+			<div class="col-md-2"></div>
+			<div class="col-md-8 white-color">
+				<div class="col-md-2"></div>
+				<div class="col-md-8 background-box-chat">
+					<div ng-repeat="rowData in chat.mensagens">
+						<div class="userChat" ng-show="rowData.msgEnv.id == chat.user.id">
+							<div class="combo">
+								<div>
+									<div class="yellowDiv"><span>{{rowData.msg}}</span></div >
+								</div>
+							</div>
+						</div>
+						
+						<div class="userChat text-right" ng-show="rowData.msgEnv.id != chat.user.id">
+							<div class="combo">
+								<div>
+									<div class="blueDiv">{{rowData.msg}}</div >
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2"></div>
+				<div class="col-md-12 paddingZero">
+					<div class="col-md-2"></div>
+					<div class="col-md-8 paddingZero">
+						<div class="marginBottom">
+							<input class="col-md-9 paddingZero inputMsg" type="text" ng-model="chat.msg">
+							<div class="col-md-2 msgButton">
+								<button class="btMsg" ng-click="chat.enviar()">Mensagem</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2"></div>
+			</div>
+		</div>
+	</div>
+	
+		
+</div>
+<div ng-include="'views/Rodape.html'"></div>

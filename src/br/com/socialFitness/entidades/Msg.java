@@ -3,6 +3,9 @@ package br.com.socialFitness.entidades;
 import java.io.*;
 import java.util.*;
 import javax.xml.bind.annotation.*;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import br.com.socialFitness.entidades.*;
 import javax.persistence.*;
 
@@ -10,12 +13,22 @@ import javax.persistence.*;
 public class Msg implements Serializable{
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue
 	private Integer id;
+
+	
+	@ManyToOne
+	@JoinColumn(name = "msgEnv", referencedColumnName = "id")
 	private Usuario msgEnv;
+
+	@ManyToOne
+	@JoinColumn(name = "msgReceb", referencedColumnName = "id")
 	private Usuario msgReceb;
+	
 	private Date dtEnvio;
+	
 	private String msg;
+	
 	public Integer getId() {
 		return id;
 	}

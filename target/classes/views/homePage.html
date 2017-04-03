@@ -1,16 +1,15 @@
-<div>
-	<div ng-include="'views/menu.html'"></div>
-	<!-- Bem Vindo
-	{{usuario}} -->
-</div>
+
 
 <div class="col-md-2"></div>
 
 <div class="background-home">
 
-	<div class="col-md-8 ">
-		
-			<div class="userHome"></div>
+	<div class="col-md-8 white-color">
+		<div>
+			<div ng-include="'views/menu.html'"></div>
+			<!-- Bem Vindo
+			{{usuario}} -->
+		</div>
 			<img class="userPNG" ng-src="img/{{user.id}}.jpg" width="200px"
 				height="200px">
 
@@ -36,11 +35,14 @@
 							class="col-md-6 homeinfo"><b>Nutricionista:</b><a></a></span>
 					</div>
 				</div>
+				
 				<div class="userHomeInfo"></div>
-				<div class="">Objetivo:</div>
-				<div class="quebraLinha" ng-show="datasource != 'editing'">{{user.objetivo}}</div>
-				<textarea class="objetivoInput" maxlength="500"
-					ng-show="datasource == 'editing'" type="text" ng-model="objetivo"></textarea>
+				<div class="box-coment">
+					<div class="">Objetivo:</div>
+					<div class="quebraLinha" ng-show="datasource != 'editing'">{{user.objetivo}}</div>
+					<textarea class="objetivoInput" maxlength="500"
+						ng-show="datasource == 'editing'" type="text" ng-model="objetivo"></textarea>
+				</div>
 				<div class="btnBox">
 					<button class="btLogar" ng-show="datasource != 'editing'"
 						ng-click="AlteraObjetivo()">Editar</button>
@@ -49,14 +51,14 @@
 					<button class="btLogar" ng-show="datasource == 'editing'"
 						ng-click="cancel()">Cancelar</button>
 				</div>
-				<div class="userHomeInfo"></div>
-			
+		
 		</div>
 		
-
+		<div ng-include="'views/Rodape.html'"></div>
 	</div>
+	
 
 </div>
 
 <div class="col-md-2"></div>
-<div ng-include="'views/Rodape.html'"></div>
+

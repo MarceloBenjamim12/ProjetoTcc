@@ -48,7 +48,7 @@ public class UsuarioBusiness {
 		return dao.lista();
 	}
 	
-	public Usuario buscaPorId(int id){
+	public Usuario BuscarPorId(int id){
 		return dao.BuscarPorId(id);
 	}
 	

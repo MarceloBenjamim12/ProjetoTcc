@@ -41,7 +41,11 @@ public class UsuarioDAO {
 	}	
 	
 	public Usuario BuscarPorId(int id){
-		return em.find(Usuario.class, id);
+		Query q = em.createQuery("select U from Usuario U where U.id = :id");
+		q.setParameter("id", id);
+		
+		List<Usuario> usu = q.getResultList();
+		return usu.get(0);
 	}
 	
 	public Usuario Autentica(String user, String senha){

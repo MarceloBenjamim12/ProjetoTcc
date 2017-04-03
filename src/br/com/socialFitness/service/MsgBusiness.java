@@ -1,7 +1,12 @@
 package br.com.socialFitness.service;
 
 import java.util.List;
+
+import javax.persistence.EntityManager;
+
 import br.com.socialFitness.dao.MsgDAO;
+import br.com.socialFitness.dao.SessionManager;
+import br.com.socialFitness.dao.UsuarioDAO;
 import br.com.socialFitness.entidades.ClienteNutri;
 import br.com.socialFitness.entidades.Msg;
 
@@ -14,6 +19,14 @@ public class MsgBusiness {
 	
 	@Autowired
 	MsgDAO dao;
+EntityManager em;
+	
+	SessionManager session;
+	
+	public MsgBusiness(SessionManager session){
+		this.session = session;
+		dao = new MsgDAO(session.getInstance().getEntityManager());
+	}
 	
 	public Msg Salvar(Msg msg){
 		return dao.salvar(msg);
@@ -37,6 +50,10 @@ public class MsgBusiness {
 	
 	public List<Msg> listaBySend(int id){
 		return dao.listaBySend(id);
+	}
+	
+	public List<Msg> listaByReceiverSend(int idUser, int idOther){
+		return dao.listaByReceiverSend(idUser, idOther);
 	}
 
 }

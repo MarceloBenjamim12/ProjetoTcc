@@ -11,6 +11,51 @@
 	border-radius: 5px;
 }
 
+.combo{
+	width:100%;
+	clear: both;
+}
+
+.white-color{
+	background-color: #fff;
+	margin:0px;
+	padding:0px;
+}
+
+.box-coment{
+	margin-left:20px;
+	margin-right:20px;
+	margin-top:20px;
+}
+
+.blueDiv{
+	background-color: #337ab7;
+	padding: 10px;
+	border-radius: 10px;
+	word-wrap: break-word;
+	float: right;
+	clear: right;
+	margin-bottom: 10px;
+	max-width: 60%;
+}
+
+.yellowDiv{
+	background-color: #ffce19;
+	padding: 10px;
+	border-radius: 10px;
+	word-wrap: break-word;
+	float: left;
+	clear: left;
+	margin-bottom: 10px;
+	max-width: 60%;
+}
+
+.userChat{
+	margin:20px;
+	font-size: 17px;
+	
+}
+
 .userHome{
 	margin-top: 80px;
 	border-top: 1px solid;
@@ -48,7 +93,7 @@ b{
 }
 
 .corFundo{
-	background-color:#fff;
+	background-color:#eae7e7;
 }
 
 .ErroLogin{
@@ -136,6 +181,8 @@ b{
 .menuClass{
 	width:100%;
 	height:50px;
+	font-size:25px;
+	margin-top: 50px;
 }
 
 .resultBox{
@@ -170,6 +217,11 @@ b{
 	color:#fff;
 }
 
+.box-pesq{
+	margin-bottom:60px;
+	min-height: 550px;
+}
+
 .box-info{
 	height:auto;
 	background-color:#fff;
@@ -177,6 +229,11 @@ b{
 	border-color: #fff;
     border-bottom-left-radius: 13px;
     border-bottom-right-radius: 13px;
+    margin-bottom: 50px;
+}
+
+.marginBottom{
+	margin-bottom: 100px;
 }
 
 .rodape{
@@ -221,6 +278,37 @@ b{
 	height:900px;
 }
 
+.background-box-chat{
+	height:700px;
+	border-width: 2px;
+ 	border-style: solid;
+ 	border-color: #b7aeae;
+ 	margin-top: 100px;
+ 	background-color: #f7f5f5;
+}
+
+.paddingZero{
+	padding: 0px;
+	margin: 0px;
+}
+
+.UserMsg{
+	margin-top: 100px;
+}
+
+.inputMsg{
+	margin-top: 20px;
+}
+
+.msgButton{
+	/*margin-right: 154px;*/
+	/*float: right;*/
+}
+
+.imgRight{
+	float:right;
+}
+
 .boxImg{
 	width:310px;
 }
@@ -247,7 +335,6 @@ b{
 }
 .login {
 	background-color: rgb(49, 195, 218);
-	witdh: auto;
 }
 .teste{
 	background-color: rgb(49, 195, 218);
