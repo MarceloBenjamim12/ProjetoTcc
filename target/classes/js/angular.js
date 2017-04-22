@@ -154,6 +154,10 @@ app.controller("perfilController", function($scope, $location){
 	console.log($scope.perfil);
 });
 
+app.controller("cadastro", ['useRest', function(useRest){
+	
+}]);
+
 app.controller("chatController", ['useRest', '$location', function(useRest, $location){
 	var self = this;
 	this.mensagens;

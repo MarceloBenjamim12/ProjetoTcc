@@ -26,6 +26,10 @@ app.config(function($routeProvider, $locationProvider) {
     .when('/chat', {
 	    templateUrl: "views/chat.html"
     }) 
+    .when('/cadastro', {
+    	templateUrl: "views/cadastro.html",
+    	controller : "cadastro"
+    }) 
     .otherwise({
     	redirectTo : '/'
     });
