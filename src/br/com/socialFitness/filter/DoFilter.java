@@ -65,6 +65,8 @@ public class DoFilter implements Filter{
 		        System.out.println(uri);
 		        if(uri.contains("login.html")){
 		        	login = true;
+		        }else if(uri.contains("cadastro.html")){
+		        	login = true;
 		        }
 		        if(uri.contains(".html")){
 		        	
