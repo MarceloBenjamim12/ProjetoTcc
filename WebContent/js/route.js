@@ -26,6 +26,9 @@ app.config(function($routeProvider, $locationProvider) {
     .when('/chat', {
 	    templateUrl: "views/chat.html"
     }) 
+    .when('/planos', {
+	    templateUrl: "views/planos.html"
+    })
     .otherwise({
     	redirectTo : '/'
     });

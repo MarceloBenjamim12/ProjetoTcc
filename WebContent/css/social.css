@@ -22,6 +22,25 @@
 	padding:0px;
 }
 
+.bronze{
+	background-color: #d99f65;
+}
+
+.boxPlan{
+	width: 40%;
+	height: 300px;
+	margin: 50px;
+	border-radius: 25px;
+}
+
+.gold{
+	background-color: #ffd700;
+}
+
+.pratina{
+	background-color: #61E0E7;
+}
+
 .box-coment{
 	margin-left:20px;
 	margin-right:20px;
@@ -48,6 +67,15 @@
 	clear: left;
 	margin-bottom: 10px;
 	max-width: 60%;
+}
+
+.boxPlanChild{
+	width: 100%;
+	height: 200px;
+}
+
+.prata{
+	background-color: #c0c0c0;
 }
 
 .userChat{
@@ -309,8 +337,19 @@ b{
 	float:right;
 }
 
+.boxPlans{
+	height: 1000px;
+}
+
 .boxImg{
 	width:310px;
+}
+
+.boxMyPlan{
+	height: 200px;
+	border: #ffd700 solid 1px;
+	margin-top:20px;
+	border-radius: 25px;
 }
 
 .serviceDescricao{
